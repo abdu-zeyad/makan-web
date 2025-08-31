@@ -1,0 +1,24 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "5S57AX3RKW.com.abdelmajed.jordanntracker",
+                "paths": [
+                    "/user-profile/*",
+                    "/"
+                ]
+            }
+        ]
+    },
+    "activitycontinuation": {
+        "apps": [
+            "5S57AX3RKW.com.abdelmajed.jordanntracker"
+        ]
+    },
+    "webcredentials": {
+        "apps": [
+            "5S57AX3RKW.com.abdelmajed.jordanntracker"
+        ]
+    }
+}
