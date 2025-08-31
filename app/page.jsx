@@ -5,63 +5,55 @@ import { Markdown } from 'components/markdown';
 import { RandomQuote } from 'components/random-quote';
 import { getNetlifyContext } from 'utils';
 
-const contextExplainer = `
-The card below is rendered on the server based on the value of \`process.env.CONTEXT\` 
-([docs](https://docs.netlify.com/configure-builds/environment-variables/#build-metadata)):
-`;
 
-const preDynamicContentExplainer = `
-The card content below is fetched by the client-side from \`/quotes/random\` (see file \`app/quotes/random/route.js\`) with a different quote shown on each page load:
-`;
-
-const postDynamicContentExplainer = `
-On Netlify, Next.js Route Handlers are automatically deployed as [Serverless Functions](https://docs.netlify.com/functions/overview/).
-Alternatively, you can add Serverless Functions to any site regardless of framework, with acccess to the [full context data](https://docs.netlify.com/functions/api/).
-
-And as always with dynamic content, beware of layout shifts & flicker! (here, we aren't...)
-`;
-
-const ctx = getNetlifyContext();
 
 export default function Page() {
     return (
-        <div className="flex flex-col gap-12 sm:gap-16">
-            <section>
-                <ContextAlert className="mb-6" />
-                <h1 className="mb-4">Netlify Platform Starter - Next.js</h1>
-                <p className="mb-6 text-lg">Get started with Next.js and Netlify in seconds.</p>
-                <Link href="https://docs.netlify.com/frameworks/next-js/overview/" className="btn btn-lg sm:min-w-64">
-                    Read the Docs
-                </Link>
-            </section>
-            {!!ctx && (
-                <section className="flex flex-col gap-4">
-                    <Markdown content={contextExplainer} />
-                    <RuntimeContextCard />
-                </section>
-            )}
-            <section className="flex flex-col gap-4">
-                <Markdown content={preDynamicContentExplainer} />
-                <RandomQuote />
-                <Markdown content={postDynamicContentExplainer} />
-            </section>
+        <div className='flex flex-col min-h-screen bg-gray-50'>
+            {/* Hero Section */}
+            <main className='flex flex-col items-center justify-center flex-grow px-6 text-center'>
+                <h1 className='text-4xl font-bold mb-4'>
+                    Welcome to <span className='text-blue-600'>MAKAN - مكان</span>
+                </h1>
+                <p className='max-w-xl mb-8 text-lg text-gray-600'>
+                    Discover and explore places with ease. Download the app now on iOS and
+                    Android.
+                </p>
+
+                {/* Download Buttons */}
+                <div className='flex flex-col items-center gap-10 sm:flex-row sm:justify-center'>
+                    {/* iOS App Image */}
+                    <a
+                        href='https://apps.apple.com/app/idXXXXXXXX' // Replace with actual iOS link
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='w-full sm:w-1/4 flex justify-center'
+                    >
+                        <img
+                            src='/images/ios.png' // Place in public/images
+                            alt='MAKAN iOS App'
+                            className='w-[300px] sm:w-[400px] lg:w-[500px] rounded-2xl shadow-lg transition-transform hover:scale-105'
+                        />
+                    </a>
+
+                    {/* Android App Image */}
+                    <a
+                        href='https://play.google.com/store/apps/details?id=com.makan.app' // Replace with actual Android link
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='w-full sm:w-1/4 flex justify-center'
+                    >
+                        <img
+                            src='/images/android.png' // Place in public/images
+                            alt='MAKAN Android App'
+                            className='w-[300px] sm:w-[400px] lg:w-[500px] rounded-2xl shadow-lg transition-transform hover:scale-105'
+                        />
+                    </a>
+                </div>
+            </main>
+
+
         </div>
     );
 }
 
-function RuntimeContextCard() {
-    const title = `Netlify Context: running in ${ctx} mode.`;
-    if (ctx === 'dev') {
-        return (
-            <Card title={title}>
-                <p>Next.js will rebuild any page you navigate to, including static pages.</p>
-            </Card>
-        );
-    } else {
-        return (
-            <Card title={title}>
-                <p>This page was statically-generated at build time.</p>
-            </Card>
-        );
-    }
-}
