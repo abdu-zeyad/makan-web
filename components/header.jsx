@@ -9,7 +9,7 @@ const navItems = [
 
 export function Header() {
     return (
-        <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
+        <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-6 md:pb-6">
             <Link href="/">
                 <div className="relative h-12 sm:h-16 w-32 sm:w-40">
                     <Image
