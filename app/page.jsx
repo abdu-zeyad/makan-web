@@ -17,32 +17,34 @@ export default function Page() {
                 <div className='flex flex-col items-center gap-10 sm:flex-row sm:justify-center'>
                     {/* iOS App Image */}
                     <a
-                        href='https://apps.apple.com/app/idXXXXXXXX' // استبدل بالرابط الفعلي
+                        href='https://apps.apple.com/app/idXXXXXXXX'
                         target='_blank'
                         rel='noopener noreferrer'
                         className='w-full sm:w-1/4 flex justify-center'
                     >
                         <img
-                            src='/images/ios.png' // ضع الصورة في مجلد public/images
+                            src='/images/ios.png'
                             alt='تطبيق MAKAN على iOS'
-                            className='w-[300px] sm:w-[400px] lg:w-[500px] rounded-2xl shadow-lg transition-transform hover:scale-105'
+                            className='w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] object-contain rounded-2xl shadow-lg transition-transform hover:scale-105'
                         />
                     </a>
 
                     {/* Android App Image */}
                     <a
-                        href='https://play.google.com/store/apps/details?id=com.makan.app' // استبدل بالرابط الفعلي
+                        href='https://play.google.com/store/apps/details?id=com.makan.app'
                         target='_blank'
                         rel='noopener noreferrer'
                         className='w-full sm:w-1/4 flex justify-center'
                     >
                         <img
-                            src='/images/android.png' // ضع الصورة في مجلد public/images
+                            src='/images/android.png'
                             alt='تطبيق MAKAN على Android'
-                            className='w-[300px] sm:w-[400px] lg:w-[500px] rounded-2xl shadow-lg transition-transform hover:scale-105'
+                            className='w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] lg:w-[480px] lg:h-[480px] object-contain rounded-2xl shadow-lg transition-transform hover:scale-105'
                         />
                     </a>
                 </div>
+
+
             </main>
         </div>
     );
