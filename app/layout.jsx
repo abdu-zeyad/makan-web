@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { Footer } from '../components/footer';
 import { Cairo } from 'next/font/google'
+import { Header } from '../components/header';
 
 const cairo = Cairo({ subsets: ['arabic', 'latin'] })
 
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
             </head>
             <body className={`${cairo.className} antialiased text-white bg-blue-900`}>
                 <div className=" ">
-                    {/* <Header /> */}
+                    <Header />
                     <main className="grow">{children}</main>
                     <Footer />
 
