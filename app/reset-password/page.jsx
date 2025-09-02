@@ -82,7 +82,7 @@ export default function ResetPasswordPage() {
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
                                 placeholder="كلمة المرور الجديدة"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-right"
+                                className="w-full px-4 py-3 border text-black border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-right"
                             />
 
                             <input
@@ -91,7 +91,7 @@ export default function ResetPasswordPage() {
                                 onChange={(e) => setConfirmPassword(e.target.value)}
                                 required
                                 placeholder="تأكيد كلمة المرور"
-                                className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-right"
+                                className="text-black w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-right"
                             />
 
                             {error && (
