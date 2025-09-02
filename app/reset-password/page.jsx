@@ -34,20 +34,18 @@ export default function ResetPasswordPage() {
         try {
             setLoading(true);
 
-            const res = await fetch(
-                "https://msydxsmddlishdoecrdr.supabase.co/functions/v1/reset-password",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`, // <-- add token here
-                    },
-                    body: JSON.stringify({ password }),
-                }
-            );
+            // Call your Next.js API route instead of Supabase directly
+            const res = await fetch("/api/reset-password", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ password, token }), // send token to server
+            });
+
+            const data = await res.json();
 
             if (!res.ok) {
-                const data = await res.json();
                 throw new Error(data.error || "فشل في إعادة تعيين كلمة المرور");
             }
 
@@ -58,6 +56,7 @@ export default function ResetPasswordPage() {
             setLoading(false);
         }
     };
+
 
     return (
         <div className="flex flex-col min-h-screen bg-gray-50">
