@@ -31,7 +31,7 @@ export default function Page() {
 
                     {/* Android App Image */}
                     <a
-                        href='https://play.google.com/store/apps/details?id=com.makan.app'
+                        href='https://play.google.com/store/apps/details?id=com.abdelmajed.jordanntracker'
                         target='_blank'
                         rel='noopener noreferrer'
                         className='w-full sm:w-1/4 flex justify-center'
